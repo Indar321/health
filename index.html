@@ -1,0 +1,412 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Indrajeet Pisda Portfolio - Premium White Theme</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Quicksand&display=swap');
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #f9fafb;
+      margin: 0;
+      padding: 0;
+      color: #1f2937; /* slate-800 */
+    }
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: #111827; /* slate-900 */
+    }
+    h1 {
+      font-size: 5rem; /* Increased size */
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-align: center;
+    }
+    .profession {
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #2563eb; /* blue-600 */
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin: 2rem 0 3rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-size: 0.875rem;
+      color: #2563eb;
+    }
+    nav a {
+      border-bottom: 2px solid transparent;
+      padding-bottom: 0.25rem;
+      transition: color 0.3s ease, border-color 0.3s ease;
+    }
+    nav a:hover,
+    nav a.active {
+      border-color: #1d4ed8;
+      color: #1d4ed8;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto 4rem;
+      background: white;
+      border-radius: 0.75rem;
+      padding: 3rem 3rem 4rem;
+    }
+    section {
+      margin-bottom: 4rem;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      background: #fefefe;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+    }
+    .section-content {
+      padding: 2rem 2.5rem;
+      background: white;
+      flex: 1;
+      color: #374151; /* slate-700 */
+      min-width: 280px;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.5rem;
+    }
+    ul li {
+      padding-left: 1.5rem;
+      position: relative;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+      line-height: 1.6;
+      color: #4b5563; /* slate-600 */
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    ul li::before {
+      content: none;
+    }
+    ul li i {
+      color: #2563eb;
+      margin-top: 0.2rem;
+      min-width: 1rem;
+      text-align: center;
+    }
+    .section-image {
+      width: 300px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      transition: filter 0.3s ease;
+      filter: brightness(0.95);
+      flex-shrink: 0;
+    }
+    .section-image:hover {
+      filter: brightness(1);
+    }
+    .skills-graph {
+      margin-top: 1rem;
+      display: grid;
+      gap: 1.25rem;
+    }
+    .skill-bar {
+      background: #e0e7ff; /* blue-100 */
+      border-radius: 9999px;
+      overflow: hidden;
+      height: 1.25rem;
+      position: relative;
+    }
+    .skill-bar-fill {
+      background: #2563eb; /* blue-600 */
+      height: 100%;
+      border-radius: 9999px 0 0 9999px;
+      transition: width 1s ease-in-out;
+    }
+    .skill-label {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+      color: #1e40af; /* blue-900 */
+      letter-spacing: 0.1em;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #6b7280;
+      margin-top: 2rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    /* Layout for alternating image/text */
+    .section-flex {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+    }
+    .section-flex.reverse {
+      flex-direction: row-reverse;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      color: #111827;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    .section-header i {
+      color: #2563eb;
+      font-size: 1.75rem;
+    }
+    .work-experience-articles {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .work-article {
+      flex: 1 1 45%;
+      min-width: 280px;
+    }
+    .work-article img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+      filter: brightness(0.95);
+      transition: filter 0.3s ease;
+    }
+    .work-article img:hover {
+      filter: brightness(1);
+    }
+    @media (max-width: 768px) {
+      section,
+      .section-flex,
+      .section-flex.reverse {
+        flex-direction: column !important;
+      }
+      .section-image {
+        max-width: 100%;
+        border-radius: 0.5rem 0.5rem 0 0;
+      }
+      .section-content {
+        padding: 1.5rem 1rem;
+      }
+      h1 {
+        font-size: 3.5rem;
+        text-align: center;
+      }
+      .profession {
+        font-size: 1rem;
+        text-align: center;
+      }
+      .section-header {
+        justify-content: center;
+      }
+      .work-experience-articles {
+        flex-direction: column;
+      }
+      .work-article {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="max-w-4xl mx-auto mt-12 mb-16 px-4">
+    <h1>Indrajeet Pisda</h1>
+    <p class="profession">Detail-oriented Data Entry &amp; Graphic Design Professional</p>
+    <nav aria-label="Primary" class="mt-8" role="navigation">
+      <a class="active" href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <main class="max-w-4xl mx-auto px-4">
+    <!-- About Section -->
+    <section aria-labelledby="about-title" class="mb-16" id="about">
+      <div class="section-flex">
+        <img alt="Abstract blue and black graphic design background" class="section-image" src="https://storage.googleapis.com/a1aa/image/b25a2dcd-c0b6-4071-1099-e1dbcb402559.jpg"/>
+        <div class="section-content">
+          <div class="section-header">
+            <i class="fas fa-user"></i>
+            <span>About Me</span>
+          </div>
+          <p style="letter-spacing:0.05em; line-height:1.6; font-size:1rem; margin-bottom:1rem; color:#374151;">
+            <i class="fas fa-info-circle mr-2 text-blue-600"></i>
+            Detail-oriented and skilled professional with experience in data entry and process associate roles. Proficient in graphic design and website development, seeking to leverage my skills in a dynamic work environment.
+          </p>
+          <div style="font-size:1rem; letter-spacing:0.05em; color:#4b5563;">
+            <p><i class="fas fa-envelope mr-2 text-blue-600"></i><strong>Email:</strong> indrajeetpisda@gmail.com</p>
+            <p><i class="fas fa-phone-alt mr-2 text-blue-600"></i><strong>Phone:</strong> 7656846030</p>
+            <p><i class="fas fa-map-marker-alt mr-2 text-blue-600"></i><strong>Address:</strong> Vikash Vihaar Raipura, Raipur</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Skills Section -->
+    <section aria-labelledby="skills-title" class="mb-16" id="skills">
+      <div class="section-flex reverse">
+        <img alt="Colorful skill graph illustration" class="section-image" src="https://storage.googleapis.com/a1aa/image/634fcd0f-30ef-4972-0a2d-23971fa025cd.jpg"/>
+        <div class="section-content">
+          <div class="section-header">
+            <i class="fas fa-chart-bar"></i>
+            <span>Skills</span>
+          </div>
+          <div class="skills-graph">
+            <div>
+              <div class="skill-label">
+                <span><i class="fas fa-keyboard mr-1 text-blue-600"></i>Data Entry</span>
+                <span>95%</span>
+              </div>
+              <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="95" class="skill-bar" role="progressbar">
+                <div class="skill-bar-fill" style="width: 95%;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="skill-label">
+                <span><i class="fas fa-paint-brush mr-1 text-blue-600"></i>Graphic Design (Adobe Illustrator, Canva)</span>
+                <span>85%</span>
+              </div>
+              <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="85" class="skill-bar" role="progressbar">
+                <div class="skill-bar-fill" style="width: 85%;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="skill-label">
+                <span><i class="fas fa-file-alt mr-1 text-blue-600"></i>Microsoft Office Suite</span>
+                <span>90%</span>
+              </div>
+              <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="90" class="skill-bar" role="progressbar">
+                <div class="skill-bar-fill" style="width: 90%;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="skill-label">
+                <span><i class="fas fa-shopping-cart mr-1 text-blue-600"></i>E-commerce Brand Management</span>
+                <span>75%</span>
+              </div>
+              <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="75" class="skill-bar" role="progressbar">
+                <div class="skill-bar-fill" style="width: 75%;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="skill-label">
+                <span><i class="fas fa-globe mr-1 text-blue-600"></i>Website Design</span>
+                <span>80%</span>
+              </div>
+              <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="80" class="skill-bar" role="progressbar">
+                <div class="skill-bar-fill" style="width: 80%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Work Experience Section -->
+    <section aria-labelledby="work-title" class="mb-16" id="work">
+      <div class="section-content" style="width: 100%; padding: 0;">
+        <div class="section-header" style="padding: 2rem 2.5rem;">
+          <i class="fas fa-briefcase"></i>
+          <span>Work Experience</span>
+        </div>
+        <div class="work-experience-articles px-6 pb-6">
+          <article class="work-article">
+            <img alt="Office workspace with computer and documents" src="https://storage.googleapis.com/a1aa/image/7a6fbddc-dc17-43ee-d0a8-bac2b6b1fb9a.jpg" />
+            <h3>Data Entry Operator</h3>
+            <p style="font-size:1rem; color:#2563eb; letter-spacing:0.1em; margin-bottom:0.25rem;">
+              <i class="fas fa-building mr-1 text-blue-600"></i>Rakshak Securities, Sukma
+            </p>
+            <p style="font-size:0.9rem; color:#3b82f6; letter-spacing:0.1em; margin-bottom:1rem;">
+              <i class="fas fa-calendar-alt mr-1 text-blue-600"></i>July 2023 – June 2024
+            </p>
+            <ul>
+              <li><i class="fas fa-check-circle mr-2 text-blue-600"></i>Accurately entered and maintained data in the company database.</li>
+              <li><i class="fas fa-check-circle mr-2 text-blue-600"></i>Assisted in the preparation of reports and documentation.</li>
+              <li><i class="fas fa-check-circle mr-2 text-blue-600"></i>Ensured data integrity and confidentiality.</li>
+            </ul>
+          </article>
+          <article class="work-article">
+            <img alt="Customer service call center" src="https://storage.googleapis.com/a1aa/image/4a364351-e216-49c7-c896-37a36866fc2a.jpg" />
+            <h3>Process Associate</h3>
+            <p style="font-size:1rem; color:#2563eb; letter-spacing:0.1em; margin-bottom:0.25rem;">
+              <i class="fas fa-building mr-1 text-blue-600"></i>Vacstech, Dantewada
+            </p>
+            <p style="font-size:0.9rem; color:#3b82f6; letter-spacing:0.1em; margin-bottom:1rem;">
+              <i class="fas fa-calendar-alt mr-1 text-blue-600"></i>January 2018 – April 2020
+            </p>
+            <ul>
+              <li><i class="fas fa-check-circle mr-2 text-blue-600"></i>Handled voice calls for credit card processing and customer inquiries.</li>
+              <li><i class="fas fa-check-circle mr-2 text-blue-600"></i>Provided excellent customer service and resolved issues efficiently.</li>
+              <li><i class="fas fa-check-circle mr-2 text-blue-600"></i>Collaborated with team members to improve process efficiency.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- Certifications Section -->
+    <section aria-labelledby="certifications-title" class="mb-16" id="certifications">
+      <div class="section-flex reverse">
+        <img alt="Certification badges and awards" class="section-image" src="https://storage.googleapis.com/a1aa/image/b66d6852-8a09-4118-8641-41e04450bd18.jpg"/>
+        <div class="section-content">
+          <div class="section-header">
+            <i class="fas fa-certificate"></i>
+            <span>Certifications</span>
+          </div>
+          <ul>
+            <li><i class="fas fa-check-circle mr-2 text-blue-600"></i>Graphic Designer Certification</li>
+            <li><i class="fas fa-check-circle mr-2 text-blue-600"></i>Adobe Certified Expert (ACE)</li>
+            <li><i class="fas fa-check-circle mr-2 text-blue-600"></i>Google Analytics Individual Qualification (GAIQ)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- Languages Section -->
+    <section aria-labelledby="languages-title" class="mb-16" id="languages">
+      <div class="section-flex">
+        <img alt="World map with language icons" class="section-image" src="https://storage.googleapis.com/a1aa/image/7a59b8f4-5ae9-4a89-4565-27942d0c71f1.jpg"/>
+        <div class="section-content">
+          <div class="section-header">
+            <i class="fas fa-language"></i>
+            <span>Languages</span>
+          </div>
+          <ul>
+            <li><i class="fas fa-check-circle mr-2 text-blue-600"></i>English (Fluent)</li>
+            <li><i class="fas fa-check-circle mr-2 text-blue-600"></i>Hindi (Native)</li>
+            <li><i class="fas fa-check-circle mr-2 text-blue-600"></i>Chhattisgarhi (Fluent)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="text-center text-gray-500 text-xs mb-8 tracking-widest uppercase select-none">
+   © 2024 Indrajeet Pisda. All rights reserved.
+  </footer>
+</body>
+</html>
